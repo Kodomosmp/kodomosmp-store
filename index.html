@@ -1,1 +1,278 @@
-https://discord.gg/t8sKxRPDU8
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KodomoSMP - ร้านค้าเซิร์ฟเวอร์</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #13111c;
+            --card-bg: #1e1b2e;
+            --primary: #ff6b9d;
+            --secondary: #9b5de5;
+            --text-light: #f8f9fa;
+            --text-muted: #a09cb0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header / Banner */
+        header {
+            background: linear-gradient(135deg, #2a1b3d 0%, #13111c 100%);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 107, 157, 0.2);
+        }
+
+        .server-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #ff6b9d, #c77dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .server-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .ip-box {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .ip-box:hover {
+            background: rgba(255, 107, 157, 0.15);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 1rem;
+        }
+
+        /* Product Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 107, 157, 0.2);
+            color: var(--primary);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            width: fit-content;
+        }
+
+        .item-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4cc9f0;
+            margin-bottom: 1rem;
+        }
+
+        .item-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+
+        .item-desc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .item-desc li::before {
+            content: "🌸 ";
+        }
+
+        /* Button */
+        .btn-buy {
+            display: block;
+            text-align: center;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn-buy:hover {
+            opacity: 0.9;
+        }
+
+        /* How to buy */
+        .steps {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .steps ol {
+            margin-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .steps li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="server-title">🌸 KodomoSMP Store</h1>
+        <p class="server-subtitle">ร้านค้าสนับสนุนเซิร์ฟเวอร์อย่างเป็นทางการ</p>
+        <div class="ip-box" onclick="copyIP()">
+            <span id="ip-text">IP:kodomosmp.mcsv.me (คลิกเพื่อคัดลอก)</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">ยศและแพ็กเกจแนะนำ</h2>
+        <div class="grid">
+            <!-- สินค้าชิ้นที่ 1 -->
+            <div class="card">
+                <div>
+                    <span class="badge">ยอดนิยม</span>
+                    <h3 class="item-name">ยศ VIP (ถาวร)</h3>
+                    <div class="item-price">50 บาท</div>
+                    <ul class="item-desc">
+                        <li>คำนำหน้าชื่อ [VIP] สุดเท่</li>
+                        <li>คำสั่ง /fly บินในโลกสร้างบ้าน</li>
+                        <li>คำสั่ง /hat ใส่บล็อกบนหัว</li>
+                        <li>โพรเทคชันขนาด 30x30 ฟรี 1 ชิ้น</li>
+                    </ul>
+                </div>
+                <a href="https://discord.gg" target="_blank" class="btn-buy">สั่งซื้อผ่าน Discord</a>
+            </div>
+
+            <!-- สินค้าชิ้นที่ 2 -->
+            <div class="card">
+                <div>
+                    <span class="badge">คุ้มค่า</span>
+                    <h3 class="item-name">ยศ MVP (ถาวร)</h3>
+                    <div class="item-price">150 บาท</div>
+                    <ul class="item-desc">
+                        <li>คำนำหน้าชื่อ [MVP] พร้อมสีแชท</li>
+                        <li>ความสามารถทั้งหมดของยศ VIP</li>
+                        <li>คำสั่ง /heal และ /feed ไม่จำกัด</li>
+                        <li>โพรเทคชันขนาด 50x50 ฟรี 1 ชิ้น</li>
+                    </ul>
+                </div>
+                <a href="https://discord.gg" target="_blank" class="btn-buy">สั่งซื้อผ่าน Discord</a>
+            </div>
+
+            <!-- สินค้าชิ้นที่ 3 -->
+            <div class="card">
+                <div>
+                    <span class="badge">ไอเทมสุ่ม</span>
+                    <h3 class="item-name">กุญแจกล่องซากุระ x5</h3>
+                    <div class="item-price">30 บาท</div>
+                    <ul class="item-desc">
+                        <li>ใช้เปิดกล่องสุ่มที่จุด /warp crate</li>
+                        <li>ลุ้นรับอาวุธแฟชั่นและชุดเกราะระดับสูง</li>
+                        <li>รับไอเทมทันทีหลังแอดมินตรวจสอบสลิป</li>
+                    </ul>
+                </div>
+                <a href="https://discord.gg" target="_blank" class="btn-buy">สั่งซื้อผ่าน Discord</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">ขั้นตอนการสั่งซื้อ</h2>
+        <div class="steps">
+            <ol>
+                <li>เลือกสินค้าที่ต้องการแล้วกดปุ่ม <strong>"สั่งซื้อผ่าน Discord"</strong></li>
+                <li>เข้าไปที่ห้องเปิด Ticket ในเซิร์ฟเวอร์ Discord ของเรา</li>
+                <li>แจ้ง <strong>ชื่อในเกม (IGN)</strong> และรายการสินค้าที่ต้องการซื้อ</li>
+                <li>โอนเงินตามยอดและส่งรูปสลิปในห้อง Ticket เพื่อรอรับของในเกมได้ทันที</li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 KodomoSMP Server. ไม่เกี่ยวข้องกับ Mojang AB
+    </footer>
+
+    <script>
+        function copyIP() {
+            const ip = ":kodomosmp.mcsv.me"; // แก้ไข IP เซิร์ฟเวอร์จริงของคุณตรงนี้
+            navigator.clipboard.writeText(ip);
+            document.getElementById("ip-text").innerText = "✅ คัดลอก IP: " + ip + " แล้ว!";
+            setTimeout(() => {
+                document.getElementById("ip-text").innerText = "IP: " + ip + " (คลิกเพื่อคัดลอก)";
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
